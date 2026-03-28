@@ -1,0 +1,38 @@
+Benchmark : AT1
+k         : 2
+Strategy  : alw_mid
+Covered   : 15 / 16
+Time      : 0.444s
+Synth calls: 12
+
+--- Covered formulas ---
+  (alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-25.6503  evals=1
+  (alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,30](RPM < 4000.0))
+    obj_best=-619.2461  evals=3
+  (alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,30](speed < 90.0))
+    obj_best=-25.6503  evals=1
+  (alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-25.6503  evals=1
+  (alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=1
+  (alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,30](speed < 90.0))
+    obj_best=-25.6503  evals=1
+  (alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-25.6503  evals=1
+  (alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=1
+  (alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,30](speed < 90.0))
+    obj_best=-25.6503  evals=1
+  alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))
+    obj_best=-619.2461  evals=3
+  alw_[0,alw_0_30____t2](RPM < 4000.0)
+    obj_best=-619.2461  evals=3
+  alw_[0,alw_0_30____t2](speed < 90.0)
+    obj_best=-3.6102  evals=8
+  alw_[alw_0_30____t2,30]((speed < 90.0) and (RPM < 4000.0))
+    obj_best=-765.3960  evals=1
+  alw_[alw_0_30____t2,30](RPM < 4000.0)
+    obj_best=-765.3960  evals=1
+  alw_[alw_0_30____t2,30](speed < 90.0)
+    obj_best=-25.6503  evals=1

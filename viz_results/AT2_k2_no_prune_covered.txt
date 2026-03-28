@@ -1,0 +1,38 @@
+Benchmark : AT2
+k         : 2
+Strategy  : no_prune
+Covered   : 15 / 16
+Time      : 0.775s
+Synth calls: 16
+
+--- Covered formulas ---
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=1
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=1
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-66.4541  evals=1
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=1
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=1
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-66.4541  evals=1
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=1
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=1
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-66.4541  evals=1
+  alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))
+    obj_best=-73.9763  evals=2
+  alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))
+    obj_best=-73.9763  evals=2
+  alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))
+    obj_best=-14.4216  evals=3
+  alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))
+    obj_best=-74.8303  evals=1
+  alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))
+    obj_best=-74.8303  evals=1
+  alw_[alw_0_30_AT2____t2,30]((brake < 250.0) or (ev_[0,5](speed < 30.0)))
+    obj_best=-66.4541  evals=1

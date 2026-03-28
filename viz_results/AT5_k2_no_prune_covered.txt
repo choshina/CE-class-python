@@ -1,0 +1,26 @@
+Benchmark : AT5
+k         : 2
+Strategy  : no_prune
+Covered   : 9 / 10
+Time      : 0.255s
+Synth calls: 10
+
+--- Covered formulas ---
+  (ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-1380.8037  evals=1
+  (ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,30](RPM > 3800.0))
+    obj_best=-1380.8037  evals=1
+  (ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,30](speed > 70.0))
+    obj_best=-22.1228  evals=1
+  (ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-1380.8037  evals=1
+  (ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,30](RPM > 3800.0))
+    obj_best=-1380.8037  evals=1
+  (ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,30](speed > 70.0))
+    obj_best=-22.1228  evals=1
+  (ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-70.0000  evals=1
+  (ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,30](RPM > 3800.0))
+    obj_best=-70.0000  evals=1
+  (ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,30](speed > 70.0))
+    obj_best=-22.1228  evals=1

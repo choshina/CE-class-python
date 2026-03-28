@@ -1,0 +1,14 @@
+Benchmark : AT3
+k         : 2
+Strategy  : alw_mid
+Covered   : 3 / 4
+Time      : 0.209s
+Synth calls: 4
+
+--- Covered formulas ---
+  (alw_[0,alw_0_30_AT3____t2](speed < 100.0)) and (alw_[alw_0_30_AT3____t2,30](speed < 100.0))
+    obj_best=-20.3501  evals=1
+  alw_[0,alw_0_30_AT3____t2](speed < 100.0)
+    obj_best=-1.4560  evals=10
+  alw_[alw_0_30_AT3____t2,30](speed < 100.0)
+    obj_best=-20.3501  evals=1

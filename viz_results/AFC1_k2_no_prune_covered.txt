@@ -1,0 +1,24 @@
+Benchmark : AFC1
+k         : 2
+Strategy  : no_prune
+Covered   : 8 / 10
+Time      : 4.599s
+Synth calls: 10
+
+--- Covered formulas ---
+  (ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-2.1500  evals=1
+  (ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-1.1224  evals=1
+  (ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-0.0541  evals=2
+  (ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-2.1500  evals=1
+  (ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-1.1224  evals=1
+  (ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-0.0541  evals=2
+  (ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-0.0506  evals=1
+  (ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-0.0506  evals=1

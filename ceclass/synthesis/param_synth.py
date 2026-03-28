@@ -1,7 +1,7 @@
 from __future__ import annotations
 import time
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, Sequence
 
 import numpy as np
 import torch
@@ -13,13 +13,14 @@ except ImportError:
 
 from ceclass.formula.stl_node import STLNode
 from ceclass.formula.converter import to_stlcgpp
+from ceclass.utils.stl_eval import max_rob0_vmap, min_rob0_vmap
 
 
 @dataclass
 class SynthResult:
     """Result of a parameter synthesis run."""
-    satisfied: bool                        # True if robustness < 0 was found
-    obj_best: float                        # Best objective value (min of -robustness)
+    satisfied: bool                        # True if some trace's robustness < 0 was found
+    obj_best: float                        # Best objective value (-max robustness over traces)
     params_best: Optional[dict[str, float]] = None  # Best parameter values
     num_evals: int = 0
     time_spent: float = 0.0
@@ -30,7 +31,12 @@ class ParamSynthesis:
     CMA-ES parameter synthesis with GPU-batched robustness evaluation.
 
     Searches for temporal parameter values (interval boundaries) that make
-    the negation of a formula satisfiable (robustness < 0).
+    at least one input trace a counterexample for the formula (robustness < 0).
+
+    The objective minimizes −max_i(rob(NOT φ, σ_i)) over traces σ_i. A solution
+    is "satisfied" when the best objective is < 0, meaning max_i(rob(NOT φ, σ_i)) > 0,
+    i.e., some trace σ_i satisfies NOT φ (violates φ). This matches the paper's
+    one-trace-at-a-time semantics via batch union.
 
     Port of MyParamSynthProblem.m with stlcgpp replacing Breach.
     """
@@ -46,6 +52,7 @@ class ParamSynthesis:
         max_time: float = 60.0,
         max_evals: int = 500,
         pop_size: Optional[int] = None,
+        eval_devices: Optional[Sequence[torch.device]] = None,
     ):
         self.formula = formula
         self.traces = traces          # (num_traces, timesteps, dims)
@@ -56,6 +63,7 @@ class ParamSynthesis:
         self.max_time = max_time
         self.max_evals = max_evals
         self.pop_size = pop_size
+        self.eval_devices = eval_devices
 
         # Compute initial guess and bounds
         self.lb = np.array([param_bounds[p][0] for p in param_names])
@@ -131,11 +139,13 @@ class ParamSynthesis:
         for val in np.linspace(lb, ub, n_grid):
             params = {self.param_names[0]: float(val)}
             try:
-                stl_formula = to_stlcgpp(neg_formula, params, self.device, self.dt)
-                with torch.no_grad():
-                    rob = torch.vmap(stl_formula)(self.traces)
-                    min_rob = rob.min().item()
-                obj = -min_rob
+                max_rob = max_rob0_vmap(
+                    lambda d: to_stlcgpp(neg_formula, params, d, self.dt),
+                    self.traces,
+                    self.device,
+                    eval_devices=self.eval_devices,
+                )
+                obj = -max_rob
             except Exception:
                 obj = 1e9
             num_evals += 1
@@ -164,17 +174,22 @@ class ParamSynthesis:
     def _batch_evaluate(self, candidates: list, neg_formula: STLNode) -> list[float]:
         """
         Evaluate all CMA-ES candidates. Each candidate is a parameter vector.
-        For each candidate, compute robustness across ALL traces on GPU.
+
+        For each candidate, compute robustness of NOT(φ) across ALL traces on GPU.
+        The objective is −max_i(rob(NOT φ, σ_i)): we want to find params where
+        the best (most-violated) trace has rob(NOT φ) > 0, i.e., some trace violates φ.
         """
         fitnesses = []
         for candidate in candidates:
             params = dict(zip(self.param_names, candidate))
             try:
-                stl_formula = to_stlcgpp(neg_formula, params, self.device, self.dt)
-                with torch.no_grad():
-                    rob = torch.vmap(stl_formula)(self.traces)  # (num_traces, timesteps)
-                    min_rob = rob.min().item()
-                fitnesses.append(-min_rob)  # Objective: minimize -robustness
+                max_rob = max_rob0_vmap(
+                    lambda d: to_stlcgpp(neg_formula, params, d, self.dt),
+                    self.traces,
+                    self.device,
+                    eval_devices=self.eval_devices,
+                )
+                fitnesses.append(-max_rob)  # Minimize -max_rob to find any violating trace
             except Exception:
                 fitnesses.append(1e9)  # Invalid params → large penalty
         return fitnesses
@@ -182,10 +197,12 @@ class ParamSynthesis:
     def evaluate_direct(self, formula: STLNode) -> float:
         """
         Direct robustness evaluation (no parameters to search).
-        Returns min robustness across all traces.
+        Returns min robustness of phi at t=0 across all traces (most-violated trace).
+        Negative means some trace violates the formula.
         """
-        neg_formula = STLNode.negate(formula)
-        stl_formula = to_stlcgpp(neg_formula, {}, self.device, self.dt)
-        with torch.no_grad():
-            rob = torch.vmap(stl_formula)(self.traces)
-            return rob.min().item()
+        return min_rob0_vmap(
+            lambda d: to_stlcgpp(formula, {}, d, self.dt),
+            self.traces,
+            self.device,
+            eval_devices=self.eval_devices,
+        )

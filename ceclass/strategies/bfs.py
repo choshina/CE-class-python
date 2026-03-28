@@ -13,18 +13,21 @@ class BFSClassifier(BaseClassifier):
     """
     BFS queue-based classification strategy (baseline).
 
-    Starts with maxima nodes in a queue. For each node:
-    - If satisfied: add immediate children to queue
-    - If failed: deactivate all descendants
+    Bottom-up walk: queue starts at **minima** (nodes with no weaker
+    ``smaller_imme`` children, e.g. leaves), then follows ``greater_imme``
+    toward stronger formulas when a node is covered; on failure, deactivates
+    ``greater_all`` (stronger ancestors).
 
-    Port of MyClassProblem.m.
+    This differs from MATLAB ``MyClassProblem.m``, which seeds the queue from
+    ``graph.maxima`` and walks downward.
     """
 
     def solve(self) -> ClassificationResult:
         t_start = time.time()
 
-        queue = deque(self.graph.maxima)
-        seen_ids = {n.formula.id for n in queue}
+        minima = [n for n in self.graph.nodes if len(n.smaller_imme) == 0]
+        queue = deque(minima)
+        seen_ids = {n.formula.id for n in minima}
 
         while queue:
             cur = queue.popleft()
@@ -36,14 +39,12 @@ class BFSClassifier(BaseClassifier):
 
             if satisfied:
                 cur.add_to_results(result)
-                # Add active immediate children to queue
-                for nd in cur.smaller_imme:
+                for nd in cur.greater_imme:
                     if nd.active and nd.formula.id not in seen_ids:
                         queue.append(nd)
                         seen_ids.add(nd.formula.id)
             else:
-                # Deactivate all descendants
-                for nd in cur.smaller_all:
+                for nd in cur.greater_all:
                     nd.active = False
 
         time_class = time.time() - t_start

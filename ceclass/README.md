@@ -143,4 +143,8 @@ python -m ceclass.examples.autotrans --strategy long_bs --k 2
 
 # Run with real trace data
 python -m ceclass.examples.autotrans --data test/data/AT1.mat --strategy long_bs --k 2 --device cuda
+
+
+python -m ceclass.examples.benchmark --device cuda --max-time 5 --max-evals 50 --output ./test_bench_cpu.csv 2>&1
+
 ```

@@ -1,0 +1,62 @@
+Benchmark : AT5
+k         : 3
+Strategy  : no_prune
+Covered   : 27 / 28
+Time      : 7.527s
+Synth calls: 28
+
+--- Covered formulas ---
+  ((ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3]((speed > 70.0) and (RPM > 3800.0)))) or (ev_[ev_0_30_AT5____t3,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3]((speed > 70.0) and (RPM > 3800.0)))) or (ev_[ev_0_30_AT5____t3,30](RPM > 3800.0))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3]((speed > 70.0) and (RPM > 3800.0)))) or (ev_[ev_0_30_AT5____t3,30](speed > 70.0))
+    obj_best=-22.1228  evals=6
+  ((ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](RPM > 3800.0))) or (ev_[ev_0_30_AT5____t3,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](RPM > 3800.0))) or (ev_[ev_0_30_AT5____t3,30](RPM > 3800.0))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](RPM > 3800.0))) or (ev_[ev_0_30_AT5____t3,30](speed > 70.0))
+    obj_best=-23.7356  evals=6
+  ((ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](speed > 70.0))) or (ev_[ev_0_30_AT5____t3,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](speed > 70.0))) or (ev_[ev_0_30_AT5____t3,30](RPM > 3800.0))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2]((speed > 70.0) and (RPM > 3800.0))) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](speed > 70.0))) or (ev_[ev_0_30_AT5____t3,30](speed > 70.0))
+    obj_best=-32.1711  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3]((speed > 70.0) and (RPM > 3800.0)))) or (ev_[ev_0_30_AT5____t3,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3]((speed > 70.0) and (RPM > 3800.0)))) or (ev_[ev_0_30_AT5____t3,30](RPM > 3800.0))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3]((speed > 70.0) and (RPM > 3800.0)))) or (ev_[ev_0_30_AT5____t3,30](speed > 70.0))
+    obj_best=-28.0013  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](RPM > 3800.0))) or (ev_[ev_0_30_AT5____t3,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](RPM > 3800.0))) or (ev_[ev_0_30_AT5____t3,30](RPM > 3800.0))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](RPM > 3800.0))) or (ev_[ev_0_30_AT5____t3,30](speed > 70.0))
+    obj_best=-32.2195  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](speed > 70.0))) or (ev_[ev_0_30_AT5____t3,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](speed > 70.0))) or (ev_[ev_0_30_AT5____t3,30](RPM > 3800.0))
+    obj_best=-1380.8037  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](RPM > 3800.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](speed > 70.0))) or (ev_[ev_0_30_AT5____t3,30](speed > 70.0))
+    obj_best=-22.1228  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3]((speed > 70.0) and (RPM > 3800.0)))) or (ev_[ev_0_30_AT5____t3,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-42.8305  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3]((speed > 70.0) and (RPM > 3800.0)))) or (ev_[ev_0_30_AT5____t3,30](RPM > 3800.0))
+    obj_best=-62.2531  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3]((speed > 70.0) and (RPM > 3800.0)))) or (ev_[ev_0_30_AT5____t3,30](speed > 70.0))
+    obj_best=-22.1228  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](RPM > 3800.0))) or (ev_[ev_0_30_AT5____t3,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-63.6701  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](RPM > 3800.0))) or (ev_[ev_0_30_AT5____t3,30](RPM > 3800.0))
+    obj_best=-33.6422  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](RPM > 3800.0))) or (ev_[ev_0_30_AT5____t3,30](speed > 70.0))
+    obj_best=-24.4517  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](speed > 70.0))) or (ev_[ev_0_30_AT5____t3,30]((speed > 70.0) and (RPM > 3800.0)))
+    obj_best=-63.6210  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](speed > 70.0))) or (ev_[ev_0_30_AT5____t3,30](RPM > 3800.0))
+    obj_best=-68.5378  evals=6
+  ((ev_[0,ev_0_30_AT5____t2](speed > 70.0)) or (ev_[ev_0_30_AT5____t2,ev_0_30_AT5____t3](speed > 70.0))) or (ev_[ev_0_30_AT5____t3,30](speed > 70.0))
+    obj_best=-22.1228  evals=6

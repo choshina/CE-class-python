@@ -54,7 +54,8 @@ def load_traces(
         traces = traces.to(device)
 
     if traces.ndim == 2:
-        traces = traces.unsqueeze(0)  # Add batch dimension
+        # Assume (num_traces, timesteps) — add a signal dimension at the end.
+        traces = traces.unsqueeze(-1)
 
     return traces
 

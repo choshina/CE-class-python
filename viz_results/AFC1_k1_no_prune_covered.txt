@@ -1,0 +1,12 @@
+Benchmark : AFC1
+k         : 1
+Strategy  : no_prune
+Covered   : 2 / 4
+Time      : 0.540s
+Synth calls: 4
+
+--- Covered formulas ---
+  ev_[0,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))
+    obj_best=-2.1500  evals=1
+  ev_[0,40](alw_[0,10](AF_err < 0.05))
+    obj_best=-1.1224  evals=1

@@ -2,7 +2,7 @@ from __future__ import annotations
 import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Optional, Sequence
 
 import torch
 
@@ -12,6 +12,7 @@ from ceclass.lattice.phi_graph import PhiGraph
 from ceclass.lattice.phi_node import PhiNode
 from ceclass.lattice.parser import Parser
 from ceclass.synthesis.param_synth import ParamSynthesis, SynthResult
+from ceclass.utils.stl_eval import min_rob0_vmap
 
 
 @dataclass
@@ -45,6 +46,7 @@ class BaseClassifier(ABC):
         dt: float = 1.0,
         max_time_per_node: float = 60.0,
         max_evals_per_node: int = 500,
+        eval_devices: Optional[Sequence[torch.device]] = None,
     ):
         """
         Args:
@@ -55,12 +57,15 @@ class BaseClassifier(ABC):
             dt: Timestep duration.
             max_time_per_node: Max CMA-ES time per node.
             max_evals_per_node: Max CMA-ES evaluations per node.
+            eval_devices: Robustness vmap devices (``None`` → use both CUDA GPUs
+                when available, else ``device``). Pass ``(device,)`` for single GPU.
         """
         self.traces = traces
         self.device = device
         self.dt = dt
         self.max_time_per_node = max_time_per_node
         self.max_evals_per_node = max_evals_per_node
+        self.eval_devices = eval_devices
 
         # Parse formula into refinement lattice
         t_start = time.time()
@@ -88,16 +93,27 @@ class BaseClassifier(ABC):
         param_bounds = self.parser.get_param_bounds_for_node(node)
 
         if not param_names:
-            # No parametric intervals — direct robustness check
-            neg_formula = STLNode.negate(node.formula)
+            # No parametric intervals — direct robustness check.
+            # A node is "satisfied" (covered) if any input trace violates the formula
+            # (robustness of phi < 0 for at least one trace). This matches the paper's
+            # semantics: each counterexample trace is tested individually and a node is
+            # covered if ANY trace falsifies it.
+            #
+            # IMPORTANT: torch.vmap(stl_formula)(traces) returns shape (num_traces, T)
+            # where rob[:, 0] is the global robustness at t=0.  Using rob.min() would
+            # pick up the -1e9 out-of-bounds sentinel stlcgpp emits for time windows
+            # that extend past the trace, causing false positives for any formula whose
+            # interval reaches the trace boundary.
             try:
-                stl_formula = to_stlcgpp(neg_formula, {}, self.device, self.dt)
-                with torch.no_grad():
-                    rob = torch.vmap(stl_formula)(self.traces)
-                    min_rob = rob.min().item()
+                min_rob = min_rob0_vmap(
+                    lambda d: to_stlcgpp(node.formula, {}, d, self.dt),
+                    self.traces,
+                    self.device,
+                    eval_devices=self.eval_devices,
+                )
                 result = SynthResult(
                     satisfied=min_rob < 0,
-                    obj_best=-min_rob,
+                    obj_best=min_rob,
                     num_evals=1,
                 )
                 return min_rob < 0, result
@@ -114,6 +130,7 @@ class BaseClassifier(ABC):
             dt=self.dt,
             max_time=self.max_time_per_node,
             max_evals=self.max_evals_per_node,
+            eval_devices=self.eval_devices,
         )
         result = synth.solve()
         return result.satisfied, result

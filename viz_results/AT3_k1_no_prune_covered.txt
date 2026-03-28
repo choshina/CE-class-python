@@ -1,0 +1,10 @@
+Benchmark : AT3
+k         : 1
+Strategy  : no_prune
+Covered   : 1 / 2
+Time      : 0.298s
+Synth calls: 2
+
+--- Covered formulas ---
+  alw_[0,30](speed < 100.0)
+    obj_best=-20.3501  evals=1

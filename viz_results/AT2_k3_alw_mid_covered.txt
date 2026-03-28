@@ -1,0 +1,134 @@
+Benchmark : AT2
+k         : 3
+Strategy  : alw_mid
+Covered   : 63 / 64
+Time      : 9.804s
+Synth calls: 33
+
+--- Covered formulas ---
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-73.9763  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-73.9763  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-73.9763  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-73.9763  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-73.9763  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-73.9763  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-73.4452  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-73.4452  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-66.4541  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-65.4947  evals=6
+  ((alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-66.4541  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-73.9763  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-73.9763  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-73.9763  evals=2
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-73.9763  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-73.9763  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-73.9763  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-73.9763  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-65.4947  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-66.4541  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  (alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-66.4541  evals=6
+  (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-73.9763  evals=6
+  (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-73.9763  evals=6
+  (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-74.8303  evals=6
+  (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-74.8303  evals=6
+  (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0)))))
+    obj_best=-66.4541  evals=6
+  (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  (alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0)))) and (alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0))))
+    obj_best=-66.4541  evals=6
+  alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))
+    obj_best=-73.9763  evals=2
+  alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))
+    obj_best=-73.9763  evals=2
+  alw_[0,alw_0_30_AT2____t2]((brake < 250.0) or (ev_[0,5](speed < 30.0)))
+    obj_best=-14.4216  evals=3
+  alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))
+    obj_best=-74.8303  evals=6
+  alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))
+    obj_best=-74.8303  evals=6
+  alw_[alw_0_30_AT2____t2,alw_0_30_AT2____t3]((brake < 250.0) or (ev_[0,5](speed < 30.0)))
+    obj_best=-57.5410  evals=6
+  alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))
+    obj_best=-74.8303  evals=1
+  alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))
+    obj_best=-74.8303  evals=1
+  alw_[alw_0_30_AT2____t3,30]((brake < 250.0) or (ev_[0,5](speed < 30.0)))
+    obj_best=-66.4541  evals=1

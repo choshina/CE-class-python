@@ -1,0 +1,14 @@
+Benchmark : AT2
+k         : 1
+Strategy  : alw_mid
+Covered   : 3 / 4
+Time      : 0.104s
+Synth calls: 4
+
+--- Covered formulas ---
+  alw_[0,30]((brake < 250.0) or (ev_[0,5]((speed < 30.0) and (RPM < 2000.0))))
+    obj_best=-74.8303  evals=1
+  alw_[0,30]((brake < 250.0) or (ev_[0,5](RPM < 2000.0)))
+    obj_best=-74.8303  evals=1
+  alw_[0,30]((brake < 250.0) or (ev_[0,5](speed < 30.0)))
+    obj_best=-66.4541  evals=1

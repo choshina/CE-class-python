@@ -1,0 +1,60 @@
+Benchmark : AFC1
+k         : 3
+Strategy  : no_prune
+Covered   : 26 / 28
+Time      : 38.477s
+Synth calls: 28
+
+--- Covered formulas ---
+  ((ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))) or (ev_[ev_0_40____t3,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-2.1500  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-1.9535  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-0.5641  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err < 0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-2.1500  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err < 0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-1.9535  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err < 0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-0.5641  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err > -0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-2.1500  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err > -0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-1.9535  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05)))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err > -0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-0.5641  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))) or (ev_[ev_0_40____t3,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-2.1500  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-1.1224  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-0.2298  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err < 0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-1.6318  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err < 0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-1.1224  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err < 0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-1.1224  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err > -0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-1.6318  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err > -0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-1.1224  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err < 0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err > -0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-0.2388  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))) or (ev_[ev_0_40____t3,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-0.0388  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-0.0388  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-0.0195  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err < 0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-0.0388  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err < 0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-0.0388  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err < 0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err > -0.05)))
+    obj_best=-0.0168  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err > -0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10]((AF_err > -0.05) and (AF_err < 0.05))))
+    obj_best=-0.0026  evals=6
+  ((ev_[0,ev_0_40____t2](alw_[0,10](AF_err > -0.05))) or (ev_[ev_0_40____t2,ev_0_40____t3](alw_[0,10](AF_err > -0.05)))) or (ev_[ev_0_40____t3,40](alw_[0,10](AF_err < 0.05)))
+    obj_best=-0.0388  evals=6

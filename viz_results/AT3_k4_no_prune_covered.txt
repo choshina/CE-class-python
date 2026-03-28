@@ -1,0 +1,30 @@
+Benchmark : AT3
+k         : 4
+Strategy  : no_prune
+Covered   : 11 / 12
+Time      : 2.943s
+Synth calls: 12
+
+--- Covered formulas ---
+  (((alw_[0,alw_0_30_AT3____t2](speed < 100.0)) and (alw_[alw_0_30_AT3____t2,alw_0_30_AT3____t3](speed < 100.0))) and (alw_[alw_0_30_AT3____t3,alw_0_30_AT3____t4](speed < 100.0))) and (alw_[alw_0_30_AT3____t4,30](speed < 100.0))
+    obj_best=-20.3501  evals=7
+  ((alw_[0,alw_0_30_AT3____t2](speed < 100.0)) and (alw_[alw_0_30_AT3____t2,alw_0_30_AT3____t3](speed < 100.0))) and (alw_[alw_0_30_AT3____t3,alw_0_30_AT3____t4](speed < 100.0))
+    obj_best=-16.1841  evals=7
+  ((alw_[0,alw_0_30_AT3____t2](speed < 100.0)) and (alw_[alw_0_30_AT3____t3,alw_0_30_AT3____t4](speed < 100.0))) and (alw_[alw_0_30_AT3____t4,30](speed < 100.0))
+    obj_best=-20.3501  evals=7
+  ((alw_[alw_0_30_AT3____t2,alw_0_30_AT3____t3](speed < 100.0)) and (alw_[alw_0_30_AT3____t3,alw_0_30_AT3____t4](speed < 100.0))) and (alw_[alw_0_30_AT3____t4,30](speed < 100.0))
+    obj_best=-20.3501  evals=7
+  (alw_[0,alw_0_30_AT3____t2](speed < 100.0)) and (alw_[alw_0_30_AT3____t3,alw_0_30_AT3____t4](speed < 100.0))
+    obj_best=-14.6749  evals=7
+  (alw_[0,alw_0_30_AT3____t2](speed < 100.0)) and (alw_[alw_0_30_AT3____t4,30](speed < 100.0))
+    obj_best=-20.3501  evals=6
+  (alw_[alw_0_30_AT3____t2,alw_0_30_AT3____t3](speed < 100.0)) and (alw_[alw_0_30_AT3____t3,alw_0_30_AT3____t4](speed < 100.0))
+    obj_best=-15.9272  evals=7
+  (alw_[alw_0_30_AT3____t3,alw_0_30_AT3____t4](speed < 100.0)) and (alw_[alw_0_30_AT3____t4,30](speed < 100.0))
+    obj_best=-20.3501  evals=6
+  alw_[0,alw_0_30_AT3____t2](speed < 100.0)
+    obj_best=-1.4560  evals=10
+  alw_[alw_0_30_AT3____t3,alw_0_30_AT3____t4](speed < 100.0)
+    obj_best=-17.1396  evals=6
+  alw_[alw_0_30_AT3____t4,30](speed < 100.0)
+    obj_best=-20.3501  evals=1

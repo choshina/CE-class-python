@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+
+# Environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Data artifacts (generated at runtime)
+*.mat
+*.npy
+*.npz
+
+# Output images in root (keep paper_figures/ and viz_results/)
+/*.png
+
+# Archives
+*.zip
+
+# PDFs (paper drafts — keep in separate repo)
+*.pdf
+
+# Results backups
+*_backup_*.csv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Claude / AI
+.claude/

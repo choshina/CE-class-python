@@ -1,0 +1,22 @@
+Benchmark : AT3
+k         : 3
+Strategy  : alw_mid
+Covered   : 7 / 8
+Time      : 0.989s
+Synth calls: 7
+
+--- Covered formulas ---
+  ((alw_[0,alw_0_30_AT3____t2](speed < 100.0)) and (alw_[alw_0_30_AT3____t2,alw_0_30_AT3____t3](speed < 100.0))) and (alw_[alw_0_30_AT3____t3,30](speed < 100.0))
+    obj_best=-17.1520  evals=6
+  (alw_[0,alw_0_30_AT3____t2](speed < 100.0)) and (alw_[alw_0_30_AT3____t2,alw_0_30_AT3____t3](speed < 100.0))
+    obj_best=-17.1520  evals=6
+  (alw_[0,alw_0_30_AT3____t2](speed < 100.0)) and (alw_[alw_0_30_AT3____t3,30](speed < 100.0))
+    obj_best=-20.3501  evals=6
+  (alw_[alw_0_30_AT3____t2,alw_0_30_AT3____t3](speed < 100.0)) and (alw_[alw_0_30_AT3____t3,30](speed < 100.0))
+    obj_best=-20.3501  evals=6
+  alw_[0,alw_0_30_AT3____t2](speed < 100.0)
+    obj_best=-1.4560  evals=10
+  alw_[alw_0_30_AT3____t2,alw_0_30_AT3____t3](speed < 100.0)
+    obj_best=-11.8604  evals=6
+  alw_[alw_0_30_AT3____t3,30](speed < 100.0)
+    obj_best=-20.3501  evals=1

@@ -1,0 +1,14 @@
+Benchmark : AT5
+k         : 1
+Strategy  : alw_mid
+Covered   : 3 / 4
+Time      : 0.059s
+Synth calls: 4
+
+--- Covered formulas ---
+  ev_[0,30]((speed > 70.0) and (RPM > 3800.0))
+    obj_best=-1380.8037  evals=1
+  ev_[0,30](RPM > 3800.0)
+    obj_best=-1380.8037  evals=1
+  ev_[0,30](speed > 70.0)
+    obj_best=-22.1228  evals=1

@@ -1,0 +1,134 @@
+Benchmark : AT1
+k         : 3
+Strategy  : no_prune
+Covered   : 63 / 64
+Time      : 16.467s
+Synth calls: 64
+
+--- Covered formulas ---
+  ((alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-762.2798  evals=6
+  ((alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-764.7334  evals=6
+  ((alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  ((alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-25.6503  evals=6
+  (alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2](RPM < 4000.0)) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-761.7642  evals=6
+  (alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0))
+    obj_best=-755.9062  evals=6
+  (alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0))
+    obj_best=-16.0077  evals=6
+  (alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  (alw_[0,alw_0_30____t2](speed < 90.0)) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-25.6503  evals=6
+  (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  (alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0))) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0)) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0)) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  (alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0)) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-765.3960  evals=6
+  (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0)) and (alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0)))
+    obj_best=-765.3960  evals=6
+  (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0)) and (alw_[alw_0_30____t3,30](RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  (alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0)) and (alw_[alw_0_30____t3,30](speed < 90.0))
+    obj_best=-25.6503  evals=6
+  alw_[0,alw_0_30____t2]((speed < 90.0) and (RPM < 4000.0))
+    obj_best=-619.2461  evals=3
+  alw_[0,alw_0_30____t2](RPM < 4000.0)
+    obj_best=-619.2461  evals=3
+  alw_[0,alw_0_30____t2](speed < 90.0)
+    obj_best=-3.6102  evals=8
+  alw_[alw_0_30____t2,alw_0_30____t3]((speed < 90.0) and (RPM < 4000.0))
+    obj_best=-765.3960  evals=6
+  alw_[alw_0_30____t2,alw_0_30____t3](RPM < 4000.0)
+    obj_best=-765.3960  evals=6
+  alw_[alw_0_30____t2,alw_0_30____t3](speed < 90.0)
+    obj_best=-22.7130  evals=6
+  alw_[alw_0_30____t3,30]((speed < 90.0) and (RPM < 4000.0))
+    obj_best=-765.3960  evals=1
+  alw_[alw_0_30____t3,30](RPM < 4000.0)
+    obj_best=-765.3960  evals=1
+  alw_[alw_0_30____t3,30](speed < 90.0)
+    obj_best=-25.6503  evals=1
