@@ -1,0 +1,86 @@
+Benchmark : Robot
+k         : 2
+Strategy  : alw_mid
+Covered   : 39 / 40
+Time      : 0.768s
+Synth calls: 25
+
+--- Covered formulas ---
+  ((ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))) and ((alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0))))
+    obj_best=-9.3598  evals=6
+  ((ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))) and (alw_[0,phi2____t2](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=6
+  ((ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=6
+  ((ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) and ((alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0))))
+    obj_best=-9.3598  evals=7
+  ((ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) and (alw_[0,phi2____t2](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=7
+  ((ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=6
+  ((ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25](d_goal1 > 0.0))) and ((alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0))))
+    obj_best=-2.5451  evals=7
+  ((ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25](d_goal1 > 0.0))) and (alw_[0,phi2____t2](not(d_danger > 0.0)))
+    obj_best=-2.5451  evals=7
+  ((ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25](d_goal1 > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-2.5608  evals=6
+  ((ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))) and ((alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0))))
+    obj_best=-9.3598  evals=7
+  ((ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))) and (alw_[0,phi2____t2](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=7
+  ((ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=6
+  ((ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) and ((alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0))))
+    obj_best=-1.7573  evals=1
+  ((ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) and (alw_[0,phi2____t2](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=7
+  ((ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=7
+  ((ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25](d_goal1 > 0.0))) and ((alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0))))
+    obj_best=-1.7573  evals=1
+  ((ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25](d_goal1 > 0.0))) and (alw_[0,phi2____t2](not(d_danger > 0.0)))
+    obj_best=-2.8836  evals=7
+  ((ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25](d_goal1 > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-2.5056  evals=7
+  ((ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))) and ((alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0))))
+    obj_best=-2.2621  evals=7
+  ((ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))) and (alw_[0,phi2____t2](not(d_danger > 0.0)))
+    obj_best=-2.2621  evals=7
+  ((ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-2.4531  evals=6
+  ((ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) and ((alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0))))
+    obj_best=-1.7573  evals=1
+  ((ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) and (alw_[0,phi2____t2](not(d_danger > 0.0)))
+    obj_best=-2.4531  evals=7
+  ((ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-2.8199  evals=7
+  ((ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25](d_goal1 > 0.0))) and ((alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0))))
+    obj_best=-1.7573  evals=1
+  ((ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25](d_goal1 > 0.0))) and (alw_[0,phi2____t2](not(d_danger > 0.0)))
+    obj_best=-2.0687  evals=6
+  ((ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25](d_goal1 > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-2.0687  evals=6
+  (alw_[0,phi2____t2](not(d_danger > 0.0))) and (alw_[phi2____t2,50](not(d_danger > 0.0)))
+    obj_best=-1.7573  evals=1
+  (ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))
+    obj_best=-9.3598  evals=6
+  (ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))
+    obj_best=-9.3598  evals=6
+  (ev_[0,phi1____t2]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))) or (ev_[phi1____t2,25](d_goal1 > 0.0))
+    obj_best=-2.5608  evals=6
+  (ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))
+    obj_best=-9.3598  evals=6
+  (ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))
+    obj_best=-9.3598  evals=6
+  (ev_[0,phi1____t2]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))) or (ev_[phi1____t2,25](d_goal1 > 0.0))
+    obj_best=-2.5214  evals=6
+  (ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25]((d_goal1 > 0.0) and ((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0)))))
+    obj_best=-2.4531  evals=6
+  (ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25]((ev_[0,ev_goal2____t2](d_goal2 > 0.0)) or (ev_[ev_goal2____t2,25](d_goal2 > 0.0))))
+    obj_best=-2.2621  evals=6
+  (ev_[0,phi1____t2](d_goal1 > 0.0)) or (ev_[phi1____t2,25](d_goal1 > 0.0))
+    obj_best=-2.0687  evals=1
+  alw_[0,phi2____t2](not(d_danger > 0.0))
+    obj_best=-0.8639  evals=4
+  alw_[phi2____t2,50](not(d_danger > 0.0))
+    obj_best=-1.7573  evals=1

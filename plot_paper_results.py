@@ -26,13 +26,14 @@ import matplotlib.ticker as mticker
 import numpy as np
 
 
-BENCH_ORDER = ["AT1", "AT2", "AT3", "AT5", "AFC1"]
+BENCH_ORDER = ["AT1", "AT2", "AT3", "AT5", "AFC1", "Robot"]
 BENCH_LABELS = {
     "AT1": r"$\varphi_1^{AT}$",
     "AT2": r"$\varphi_2^{AT}$",
     "AT3": r"$\varphi_3^{AT}$",
     "AT5": r"$\varphi_5^{AT}$",
     "AFC1": r"$\varphi_1^{AFC}$",
+    "Robot": r"$\varphi^{Rob}$",
 }
 K_ORDER = [1, 2, 3, 4]
 
@@ -67,7 +68,7 @@ def get_int(rows: list[dict], bench: str, k: int, strategy: str, key: str) -> in
 # ── Figure 1: Per-benchmark time comparison (paper Fig. 4 style) ─────────
 
 def plot_time_comparison(rows: list[dict], out: Path) -> None:
-    fig, axes = plt.subplots(1, 5, figsize=(18, 4), dpi=150, sharey=False)
+    fig, axes = plt.subplots(1, 6, figsize=(21, 4), dpi=150, sharey=False)
 
     x = np.arange(len(K_ORDER))
     w = 0.35
@@ -119,7 +120,7 @@ def plot_time_comparison(rows: list[dict], out: Path) -> None:
 def plot_speedup_vs_k(rows: list[dict], out: Path) -> None:
     fig, ax = plt.subplots(figsize=(7.5, 4.5), dpi=150)
     cmap = plt.cm.Set1(np.linspace(0, 0.6, len(BENCH_ORDER)))
-    markers = ["o", "s", "D", "^", "v"]
+    markers = ["o", "s", "D", "^", "v", "P"]
 
     for i, bench in enumerate(BENCH_ORDER):
         ks_plot, speedups = [], []
@@ -150,7 +151,7 @@ def plot_speedup_vs_k(rows: list[dict], out: Path) -> None:
 # ── Figure 3: Synthesis calls comparison (all benchmarks) ─────────────────
 
 def plot_synth_calls(rows: list[dict], out: Path) -> None:
-    fig, axes = plt.subplots(1, 5, figsize=(18, 4), dpi=150, sharey=False)
+    fig, axes = plt.subplots(1, 6, figsize=(21, 4), dpi=150, sharey=False)
 
     x = np.arange(len(K_ORDER))
     w = 0.35
@@ -192,7 +193,7 @@ def plot_synth_calls(rows: list[dict], out: Path) -> None:
 # ── Figure 4: Coverage comparison ─────────────────────────────────────────
 
 def plot_coverage_comparison(rows: list[dict], out: Path) -> None:
-    fig, axes = plt.subplots(1, 5, figsize=(18, 3.8), dpi=150, sharey=True)
+    fig, axes = plt.subplots(1, 6, figsize=(21, 3.8), dpi=150, sharey=True)
 
     x = np.arange(len(K_ORDER))
     w = 0.35
@@ -291,7 +292,7 @@ def plot_summary_table(rows: list[dict], out: Path) -> None:
             cell.set_text_props(color="white", fontweight="bold", fontsize=8)
         cell.set_edgecolor("#BDBDBD")
 
-    ax.set_title("Classification Results Summary — 100 Counterexample Traces per Benchmark",
+    ax.set_title("Classification Results Summary",
                  fontsize=13, fontweight="bold", pad=16)
     fig.tight_layout()
     fig.savefig(out, bbox_inches="tight")

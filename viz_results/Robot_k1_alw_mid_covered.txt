@@ -1,0 +1,22 @@
+Benchmark : Robot
+k         : 1
+Strategy  : alw_mid
+Covered   : 7 / 8
+Time      : 0.316s
+Synth calls: 7
+
+--- Covered formulas ---
+  (ev_[0,25]((d_goal1 > 0.0) and (ev_[0,25](d_goal2 > 0.0)))) and (alw_[0,50](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=1
+  (ev_[0,25](d_goal1 > 0.0)) and (alw_[0,50](not(d_danger > 0.0)))
+    obj_best=-2.0687  evals=1
+  (ev_[0,25](ev_[0,25](d_goal2 > 0.0))) and (alw_[0,50](not(d_danger > 0.0)))
+    obj_best=-9.3598  evals=1
+  alw_[0,50](not(d_danger > 0.0))
+    obj_best=-1.7573  evals=1
+  ev_[0,25]((d_goal1 > 0.0) and (ev_[0,25](d_goal2 > 0.0)))
+    obj_best=-9.3598  evals=1
+  ev_[0,25](d_goal1 > 0.0)
+    obj_best=-2.0687  evals=1
+  ev_[0,25](ev_[0,25](d_goal2 > 0.0))
+    obj_best=-9.3598  evals=1
