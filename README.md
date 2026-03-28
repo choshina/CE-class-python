@@ -4,7 +4,7 @@ Counterexample classification against Signal Temporal Logic (STL) specifications
 
 Given falsifying traces of a system, CEClass classifies *why* they fail by decomposing the STL spec into a lattice of refined sub-formulas, then systematically testing which refinements have counterexamples.
 
-Python port of the [original MATLAB tool](https://github.com/choshina/CEClass) from the paper "Counterexample Classification against Signal Temporal Logic Specifications" (FM 2026). Uses [stlcg++](https://github.com/StanfordASL/stlcg) for GPU-accelerated STL robustness computation instead of Breach/Simulink.
+Python port of the [original MATLAB tool](https://github.com/choshina/CEClass) from the paper "Counterexample Classification against Signal Temporal Logic Specifications". Uses [stlcg++](https://uw-ctrl.github.io/stlcg/) for GPU-accelerated STL robustness computation instead of Breach/Simulink.
 
 ## Installation
 

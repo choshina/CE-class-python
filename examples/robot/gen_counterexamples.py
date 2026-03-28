@@ -3,12 +3,12 @@ Generate 75 counterexamples for the robot navigation specification:
 
     Phi = ev[0,25]( goal1 AND ev[0,25](goal2) ) AND alw[0,50]( NOT danger )
 
-2D state space: signal 0 = x, signal 1 = y
+2D workspace but traces are augmented with region-membership signals:
+    signal 0: d_goal1  = min(x-1, 5-x, y-1, 5-y)    (>0 iff in goal1)
+    signal 1: d_goal2  = min(x-15, 19-x, y-15, 19-y) (>0 iff in goal2)
+    signal 2: d_danger = min(x-8, 12-x, y-8, 12-y)   (>0 iff in danger)
 
-Region definitions:
-    goal1:  x in (1, 5)  AND y in (1, 5)    -- first waypoint
-    goal2:  x in (15,19) AND y in (15,19)   -- second waypoint
-    danger: x in (8, 12) AND y in (8, 12)   -- obstacle (between goal1 and goal2)
+This makes each region an atomic predicate, keeping lattice size tractable.
 
 Counterexample types (25 each):
     Type A -- never reach goal1 in [0,25]
@@ -31,19 +31,11 @@ GOAL2  = (15, 19, 15, 19)
 DANGER = (8, 12, 8, 12)
 
 
-def _region(x_lo, x_hi, y_lo, y_hi, label):
-    return STLNode.nary_and([
-        STLNode.predicate("x", ">", x_lo, signal_index=0, node_id=f"{label}_x_gt_{x_lo}"),
-        STLNode.predicate("x", "<", x_hi, signal_index=0, node_id=f"{label}_x_lt_{x_hi}"),
-        STLNode.predicate("y", ">", y_lo, signal_index=1, node_id=f"{label}_y_gt_{y_lo}"),
-        STLNode.predicate("y", "<", y_hi, signal_index=1, node_id=f"{label}_y_lt_{y_hi}"),
-    ], node_id=label)
-
-
 def build_formula():
-    goal1  = _region(*GOAL1,  "goal1")
-    goal2  = _region(*GOAL2,  "goal2")
-    danger = _region(*DANGER, "danger")
+    """ev[0,25]( goal1 AND ev[0,25](goal2) ) AND alw[0,50]( NOT danger )"""
+    goal1  = STLNode.predicate("d_goal1",  ">", 0.0, signal_index=0, node_id="goal1")
+    goal2  = STLNode.predicate("d_goal2",  ">", 0.0, signal_index=1, node_id="goal2")
+    danger = STLNode.predicate("d_danger", ">", 0.0, signal_index=2, node_id="danger")
 
     ev_goal2     = STLNode.eventually_node(goal2, interval=(0, 25), node_id="ev_goal2")
     g1_and_ev_g2 = STLNode.and_node(goal1, ev_goal2, node_id="goal1_and_ev_goal2")
@@ -53,6 +45,47 @@ def build_formula():
         interval=(0, 50), node_id="phi2",
     )
     return STLNode.and_node(phi1, phi2, node_id="Phi")
+
+
+def build_k(k_val: int):
+    """
+    Formula tree:
+        Phi (AND)
+        ├── phi1: ev[0,25](...)           -- k splits
+        │   └── AND
+        │       ├── goal1                 -- atomic pred
+        │       └── ev[0,25](goal2)       -- k splits
+        │           └── goal2             -- atomic pred
+        └── phi2: alw[0,50](NOT danger)   -- k splits
+            └── NOT
+                └── danger                -- atomic pred
+    """
+    p = [1]
+    k_ev_goal2 = [k_val, p]               # ev[0,25](goal2)
+    k_g1_and   = [1, p, k_ev_goal2]       # goal1 AND ev(goal2)
+    k_phi1     = [k_val, k_g1_and]         # ev[0,25](...)
+    k_phi2     = [k_val, [1, p]]           # alw[0,50](NOT danger)
+    return [1, k_phi1, k_phi2]             # AND(phi1, phi2)
+
+
+def _region_dist(xy, box):
+    """Signed distance: >0 inside the box."""
+    x_lo, x_hi, y_lo, y_hi = box
+    return np.minimum(
+        np.minimum(xy[:, 0] - x_lo, x_hi - xy[:, 0]),
+        np.minimum(xy[:, 1] - y_lo, y_hi - xy[:, 1]),
+    )
+
+
+def xy_to_signals(xy_traces):
+    """(N, T, 2) raw xy -> (N, T, 3) region-distance signals."""
+    N, T, _ = xy_traces.shape
+    sigs = np.zeros((N, T, 3))
+    for i in range(N):
+        sigs[i, :, 0] = _region_dist(xy_traces[i], GOAL1)
+        sigs[i, :, 1] = _region_dist(xy_traces[i], GOAL2)
+        sigs[i, :, 2] = _region_dist(xy_traces[i], DANGER)
+    return sigs
 
 
 def smooth_trace(start_xy, waypoints, T):
@@ -78,7 +111,7 @@ def smooth_trace(start_xy, waypoints, T):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--device", default="cuda")
-    parser.add_argument("--out-dir", default=".")
+    parser.add_argument("--out-dir", default="examples/robot")
     args = parser.parse_args()
 
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
@@ -88,7 +121,7 @@ def main():
     print(f"Formula: {Phi}\n")
     formula_stlcg = to_stlcgpp(Phi, params={}, device=device, dt=dt)
 
-    traces_list = []
+    xy_list = []
 
     # Type A: never reach goal1 — wander in neutral zone [6,7.5]
     print("Generating Type A (never reach goal1)...")
@@ -98,9 +131,9 @@ def main():
         noise = rng.standard_normal((T, 2)) * 0.3
         trace[:, 0] = np.clip(bx + noise[:, 0], 5.5, 7.9)
         trace[:, 1] = np.clip(by + noise[:, 1], 5.5, 7.9)
-        traces_list.append(trace)
+        xy_list.append(trace)
 
-    # Type B: reach goal1, but never reach goal2 — get stuck in middle
+    # Type B: reach goal1, but never reach goal2 — get stuck
     print("Generating Type B (reach goal1, never goal2)...")
     for _ in range(25):
         sx, sy = rng.uniform(1.5, 4.5), rng.uniform(1.5, 4.5)
@@ -111,7 +144,7 @@ def main():
              (T - 1, mx + rng.uniform(-0.5, 0.5), my + rng.uniform(-0.5, 0.5))],
             T,
         )
-        traces_list.append(trace)
+        xy_list.append(trace)
 
     # Type C: reach goal1 and goal2 but pass through danger
     print("Generating Type C (reach both goals, enter danger)...")
@@ -126,12 +159,13 @@ def main():
             [(t_d, dx, dy), (t_g2, gx, gy), (T - 1, gx, gy)],
             T,
         )
-        traces_list.append(trace)
+        xy_list.append(trace)
 
-    traces_np = np.stack(traces_list, axis=0)
-    traces_t = torch.tensor(traces_np, dtype=torch.float32, device=device)
+    xy_traces = np.stack(xy_list, axis=0)       # (75, T, 2) raw positions
+    sig_traces = xy_to_signals(xy_traces)        # (75, T, 3) region distances
+    traces_t = torch.tensor(sig_traces, dtype=torch.float32, device=device)
 
-    print(f"\nTraces shape: {traces_t.shape}")
+    print(f"\nXY shape: {xy_traces.shape}  Signal shape: {sig_traces.shape}")
     print("Computing robustness...")
 
     with torch.no_grad():
@@ -142,8 +176,10 @@ def main():
     print(f"  Min: {rob_cpu.min():.4f}  Max: {rob_cpu.max():.4f}  Negative: {n_neg}/{N}")
 
     out = args.out_dir
-    np.save(f"{out}/counterexamples.npy", traces_np)
-    print(f"\nSaved: {out}/counterexamples.npy  (shape {traces_np.shape})")
+    np.save(f"{out}/counterexamples_xy.npy", xy_traces)
+    np.save(f"{out}/counterexamples.npy", sig_traces)
+    print(f"\nSaved: {out}/counterexamples_xy.npy  (raw positions, shape {xy_traces.shape})")
+    print(f"Saved: {out}/counterexamples.npy  (region signals, shape {sig_traces.shape})")
 
 
 if __name__ == "__main__":
